@@ -1,0 +1,33 @@
+@import '../base/vars';
+
+.header {
+
+    padding: 6.6rem 0;
+
+    &__inner {
+        @extend %flex-row-center;
+    }
+
+    // .header__nav
+
+    &__nav {
+        @media(min-width: 1025px) {
+            margin-left: auto;
+        }
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        @extend %text-14;
+        line-height: 2rem;
+        border-radius: 0.8rem;
+        padding: 1rem 2.9rem;
+    }
+
+    &__btn+&__btn {
+        margin-left: 1.3rem;
+    }
+}

@@ -1,0 +1,66 @@
+@import './vars';
+@import './mixins';
+@import './null';
+
+.wrapper {
+    @extend %flex-col;
+    min-height: 100vh;
+    position: relative;
+    background-size: 111rem 99.9rem;
+    background-position: 50rem 2.1rem;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -28.5rem;
+        left: -22.9rem;
+        z-index: -1;
+        width: 84.8rem;
+        height: 84.8rem;
+        border-radius: 50%;
+        background-color: #0F3123;
+        filter: blur(43rem);
+    }
+}
+
+
+
+.container {
+    max-width: 137rem + $gap * 2;
+    padding: 0 4.5rem;
+    margin: 0 auto;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+.btn {
+    background: linear-gradient(180deg, #E2F685 0%, #8AF9AD 100%);
+    border-radius: 1.7rem;
+    color: $black;
+    text-align: center;
+
+    &--blue {
+        background: linear-gradient(135deg, #00FFAA 0%, #4579F5 53.01%, #9C42F5 99.83%);
+    }
+
+    &--border {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.2rem;
+            right: 0.2rem;
+            bottom: 0.2rem;
+            left: 0.2rem;
+            z-index: -1;
+            background-color: $black;
+            border-radius: 0.8rem;
+        }
+    }
+}

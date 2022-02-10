@@ -1,0 +1,36 @@
+@import '../base/vars';
+
+.promo {
+    padding-top: 11rem;
+
+    &__content {
+        max-width: 54.9rem;
+    }
+
+    &__title {
+        font-size: 4.8rem;
+        line-height: 5.9rem;
+        font-weight: 800;
+        color: $accent;
+
+        &:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__text {
+        @extend %text-18;
+        font-weight: 500;
+        color: #8FA2A6;
+
+        &:not(:last-child) {
+            margin-bottom: 3.6rem;
+        }
+    }
+
+    &__btn {
+        @extend %text-16;
+        line-height: 2rem;
+        padding: 2.1rem 3.35rem;
+    }
+}
