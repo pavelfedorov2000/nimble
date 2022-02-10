@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
 
     &::before {
-        content: '';
+        //content: '';
         position: absolute;
         top: -28.5rem;
         left: -22.9rem;
@@ -63,4 +63,21 @@
             border-radius: 0.8rem;
         }
     }
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 3.4rem;
+  line-height: 4.1rem;
+
+  &--accent {
+    color: $accent;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.2rem;
+  color: #fff;
 }

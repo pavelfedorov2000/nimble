@@ -4,28 +4,21 @@ import { useState, useEffect } from 'react';
 import './base/_general.scss';
 import AppHeader from './AppHeader/AppHeader';
 import Promo from './Promo/Promo';
+import TokenSale from './TokenSale/TokenSale';
 import Footer from './Footer/Footer';
 
 function App() {
-    useEffect(() => {
-        fetch("nimble.json")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    console.log(result);
-                }
-            );
-    });
 
-    return (
-        <div className="wrapper" style={{backgroundImage: 'url(img/promo.jpg)'}}>
-            <AppHeader/>
-            <main className="page">
-                <Promo/>
-            </main>
-            <Footer/>
-        </div>
-    );
+  return (
+    <div className="wrapper" style={{ backgroundImage: 'url(img/promo.jpg)' }}>
+      <AppHeader />
+      <main className="page">
+        <Promo />
+        <TokenSale />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
