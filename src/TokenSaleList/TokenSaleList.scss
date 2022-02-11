@@ -1,0 +1,74 @@
+@import '../base/vars';
+
+.token-sale-card {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    border-radius: 2rem;
+    background: linear-gradient(139.69deg, #05030e 3.61%, #7ee8a0 114.72%);
+    transition: 0.3s all;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.1rem;
+        right: 0.1rem;
+        bottom: 0.1rem;
+        left: 0.1rem;
+        z-index: -1;
+        background-color: $black;
+        border-radius: 2rem;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0rem 3.4rem 7.4rem rgba(162, 220, 137, 0.2);
+            transform: translateY(-1rem);
+            background: linear-gradient(139.69deg, #e3f784 3.61%, #7ee8a0 114.72%);
+        }
+    }
+
+    &__title {
+        @extend %text-16;
+        line-height: 2.3rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 2.4rem 1.5rem;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1rem;
+            background: linear-gradient(270.04deg, #4c8963 5.36%, #091616 90%);
+        }
+    }
+
+    &__content {
+        padding: 2.8rem 1.5rem 2.5rem;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            @extend %pos-center-x;
+            top: 2.1rem;
+            width: 15.9rem;
+            height: 8rem;
+            background: rgba(162, 220, 137, 0.4);
+            filter: blur(8rem);
+        }
+    }
+
+    &__price {
+        @extend %text-34;
+        color: $accent;
+    }
+
+    &__num {
+        @extend %text-16;
+        line-height: 4.4rem;
+        font-weight: 500;
+        color: #5da271;
+    }
+}

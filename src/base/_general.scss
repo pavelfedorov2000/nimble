@@ -19,12 +19,10 @@
         width: 84.8rem;
         height: 84.8rem;
         border-radius: 50%;
-        background-color: #0F3123;
+        background-color: #0f3123;
         filter: blur(43rem);
     }
 }
-
-
 
 .container {
     max-width: 137rem + $gap * 2;
@@ -37,13 +35,13 @@
 }
 
 .btn {
-    background: linear-gradient(180deg, #E2F685 0%, #8AF9AD 100%);
+    background: linear-gradient(180deg, #e2f685 0%, #8af9ad 100%);
     border-radius: 1.7rem;
     color: $black;
     text-align: center;
 
     &--blue {
-        background: linear-gradient(135deg, #00FFAA 0%, #4579F5 53.01%, #9C42F5 99.83%);
+        background: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
     }
 
     &--border {
@@ -66,18 +64,15 @@
 }
 
 .section-title {
-  font-weight: 800;
-  font-size: 3.4rem;
-  line-height: 4.1rem;
+    @extend %text-34;
 
-  &--accent {
-    color: $accent;
-  }
+    &--accent {
+        color: $accent;
+    }
 }
 
 .title {
-  font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 2.2rem;
-  color: #fff;
+    @extend %text-24;
+    font-weight: 700;
+    color: #fff;
 }

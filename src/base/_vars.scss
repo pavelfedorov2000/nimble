@@ -1,7 +1,11 @@
 // colors
-$accent: #B4F299;
-$black: #05030E;
+$accent: #b4f299;
+$black: #05030e;
 $gap: 4.5rem;
+
+%text-12 {
+    font-size: 1.2rem;
+}
 
 %text-14 {
     font-size: 1.4rem;
@@ -29,6 +33,7 @@ $gap: 4.5rem;
 %text-34 {
     font-size: 3.4rem;
     line-height: 4.1rem;
+    font-weight: 800;
 }
 
 %vertical-align {

@@ -1,0 +1,37 @@
+@import '../base/vars';
+
+.token-sale {
+    &__title {
+        text-align: center;
+        margin-bottom: 5.5rem;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 17.5rem * 5 + 2.4rem * 4 1fr;
+        grid-template-rows: max-content 6.2rem;
+        grid-template-areas:
+            'ol conditions'
+            'ol btn';
+        //grid-template-columns: 1fr 37rem;
+        grid-gap: 2.2rem 2.9rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1.9rem 2.4rem;
+        grid-area: ol;
+    }
+
+    &__conditions {
+        grid-area: conditions;
+    }
+
+    &__btn {
+        grid-area: btn;
+        @extend %text-16;
+        @extend %flex-center;
+        font-weight: 600;
+    }
+}

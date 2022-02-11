@@ -1,0 +1,56 @@
+@import '../base/vars';
+
+.token-sale-conditions {
+    padding: 3.2rem 3.4rem;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(139.69deg, #e3f784 3.61%, #7ee8a0 114.72%);
+    border-radius: 2rem;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.1rem;
+        right: 0.1rem;
+        bottom: 0.1rem;
+        left: 0.1rem;
+        z-index: -1;
+        background-color: $black;
+        border-radius: 2rem;
+    }
+
+    &__top {
+        @extend %flex-row;
+        align-items: flex-end;
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__title {
+        @extend %text-16;
+        line-height: 2.3rem;
+        font-weight: 700;
+        color: #e3f784;
+        text-transform: uppercase;
+    }
+
+    &__logo {
+        width: 4.1rem;
+        height: 4rem;
+    }
+
+    &__list-item {
+        line-height: 2.3rem;
+        dt {
+            display: block;
+            @extend %text-12;
+            font-weight: 500;
+            color: #a2dc89;
+        }
+        dd {
+            @extend %text-14;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+}

@@ -8,9 +8,9 @@ import TokenSale from './TokenSale/TokenSale';
 import Footer from './Footer/Footer';
 
 function App() {
-
+    //style={{ backgroundImage: 'url(img/promo.jpg)' }}
   return (
-    <div className="wrapper" style={{ backgroundImage: 'url(img/promo.jpg)' }}>
+    <div className="wrapper">
       <AppHeader />
       <main className="page">
         <Promo />
