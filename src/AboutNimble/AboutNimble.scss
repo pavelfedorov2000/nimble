@@ -1,35 +1,59 @@
 @import '../base/vars';
 
 .about-nimble {
-    padding-bottom: 15rem;
-    &__img {
-        width: 30.6rem;
-        height: 21.9rem;
-    }
-    &__inner {
-        @extend %flex-row;
-        align-items: flex-start;
-    }
+  padding-bottom: 15rem;
 
-    &__content {
-    }
+  @media(max-width: 1024px) {
+    padding-bottom: 13.3rem;
+  }
 
-    &__title {
-        &:not(:last-child) {
-            margin-bottom: 5.4rem;
+  &__img {
+    width: 30.6rem;
+    height: 21.9rem;
+
+    @media(max-width: 1024px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__inner {
+    @media(min-width: 1025px) {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    &:not(:last-child) {
+      @media(max-width: 1024px) {
+        margin-bottom: 7.5rem;
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 5.4rem;
+    }
+  }
+
+  &__text {
+    @extend %text-16;
+    line-height: 2.4rem;
+    font-weight: 500;
+    color: #8fa2a6;
+    max-width: 78.7rem;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      &.hidden {
+        @media(max-width: 1024px) {
+          display: none;
         }
+      }
     }
-
-    &__text {
-        @extend %text-16;
-        line-height: 2.4rem;
-        font-weight: 500;
-        color: #8fa2a6;
-        max-width: 78.7rem;
-        p {
-            &:not(:last-child) {
-                margin-bottom: 3rem;
-            }
-        }
-    }
+  }
 }

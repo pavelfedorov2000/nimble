@@ -1,34 +1,41 @@
 @import '../base/vars';
 
 .token-features {
-    &__title {
-        &:not(:last-child) {
-            margin-bottom: 5.8rem;
-        }
-    }
+  padding-bottom: 16.6rem;
 
-    &__list-item {
-        display: flex;
-        @extend %text-16;
-        line-height: 4.4rem;
-        font-weight: 500;
-        dt {
-            position: relative;
-            padding-left: 6.5rem;
-            color: #8fa2a6;
-            &::before {
-                content: '';
-                @extend %pos-center-y;
-                left: 0;
-                width: 3.6rem;
-                height: 0.1rem;
-                background: linear-gradient(
-                    105.56deg,
-                    rgba(226, 246, 133, 0.6) 18.43%,
-                    rgba(138, 249, 173, 0.6) 89.58%
-                );
-                border-radius: 1.7rem;
-            }
-        }
+  @media(max-width: 1024px) {
+    padding-bottom: 10rem;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 5.8rem;
     }
+  }
+
+  &__list-item {
+    display: flex;
+    @extend %text-16;
+    line-height: 4.4rem;
+    font-weight: 500;
+
+    dt {
+      position: relative;
+      padding-left: 6.5rem;
+      color: #8fa2a6;
+      padding-right: 0.3rem;
+
+      &::before {
+        content: '';
+        @extend %pos-center-y;
+        left: 0;
+        width: 3.6rem;
+        height: 0.1rem;
+        background: linear-gradient(105.56deg,
+            rgba(226, 246, 133, 0.6) 18.43%,
+            rgba(138, 249, 173, 0.6) 89.58%);
+        border-radius: 1.7rem;
+      }
+    }
+  }
 }

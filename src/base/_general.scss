@@ -3,79 +3,155 @@
 @import './null';
 
 .wrapper {
-    @extend %flex-col;
-    min-height: 100vh;
-    position: relative;
-    background-size: 111rem 99.9rem;
-    background-position: 50rem 2.1rem;
-    background-repeat: no-repeat;
+  @extend %flex-col;
+  min-height: 100vh;
+  position: relative;
+  //background-size: 111rem 99.9rem;
+  //background-position: 50rem 2.1rem;
+  //background-repeat: no-repeat;
+  overflow-x: hidden;
 
-    &::before {
-        //content: '';
-        position: absolute;
-        top: -28.5rem;
-        left: -22.9rem;
-        z-index: -1;
-        width: 84.8rem;
-        height: 84.8rem;
-        border-radius: 50%;
-        background-color: #0f3123;
-        filter: blur(43rem);
-    }
+  &::before {
+    //content: '';
+    position: absolute;
+    top: -28.5rem;
+    left: -22.9rem;
+    z-index: -1;
+    width: 84.8rem;
+    height: 84.8rem;
+    border-radius: 50%;
+    background-color: #0f3123;
+    filter: blur(43rem);
+  }
 }
 
 .container {
-    max-width: 137rem + $gap * 2;
-    padding: 0 4.5rem;
-    margin: 0 auto;
+  max-width: 137rem + $gap * 2;
+  padding: 0 4.5rem;
+  margin: 0 auto;
 }
 
 .page {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .btn {
-    background: linear-gradient(180deg, #e2f685 0%, #8af9ad 100%);
-    border-radius: 1.7rem;
-    color: $black;
-    text-align: center;
-    @extend %text-16;
-    line-height: 2rem;
-    font-weight: 600;
+  background: linear-gradient(180deg, #e2f685 0%, #8af9ad 100%);
+  border-radius: 1.7rem;
+  color: $black;
+  text-align: center;
+  @extend %text-16;
+  line-height: 2rem;
+  font-weight: 600;
 
-    &--blue {
-        background: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+  &--blue {
+    background: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+  }
+
+  &--border {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      bottom: 0.2rem;
+      left: 0.2rem;
+      z-index: -1;
+      background-color: $black;
+      border-radius: 0.8rem;
     }
+  }
+}
 
-    &--border {
-        position: relative;
-        z-index: 2;
-        color: #fff;
+.toggle-text {
+  position: relative;
+  padding-right: 1.8rem;
+  background-color: transparent;
+  color: $accent;
+  @extend %text-14;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0.2rem;
-            right: 0.2rem;
-            bottom: 0.2rem;
-            left: 0.2rem;
-            z-index: -1;
-            background-color: $black;
-            border-radius: 0.8rem;
-        }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0.8rem;
+    right: 0;
+    background-color: $accent;
+    width: 0.6rem;
+    height: 0.5rem;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+
+  &.active {
+    &:after {
+      transform: rotate(180deg);
     }
+  }
 }
 
 .section-title {
-    @extend %text-34;
+  @extend %text-34;
 
-    &--accent {
-        color: $accent;
-    }
+  &--accent {
+    color: $accent;
+  }
 }
 
 .title {
-    @extend %text-24;
-    font-weight: 700;
-    color: #fff;
+  @extend %text-24;
+  font-weight: 700;
+  color: #fff;
+
+  &--orange {
+    @include gradient-text(linear-gradient(139.33deg, #CAEE39 -14.59%, #E99A3D 99.86%));
+  }
+}
+
+.swiper-button-prev {
+  display: none;
+}
+
+.swiper-button-next {
+  width: 3.4rem !important;
+  height: 1rem !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: calc(100% + 3rem) !important;
+  left: 12.2rem !important;
+  right: auto !important;
+
+  &:after {
+    content: '' !important;
+  }
+}
+
+.swiper {
+  padding-bottom: 3rem;
+  //height: 30rem !important;
+}
+
+.swiper-slide {
+  transition: .3s all;
+}
+
+.swiper-slide-active {
+  //transform: translateY(-4rem) !important;
+}
+
+.sign-in-btn {
+  display: none;
+  background-color: transparent;
+  width: 2.8rem;
+  height: 2.6rem;
+
+  @media(max-width: 1024px) {
+    display: block;
+  }
 }

@@ -1,31 +1,50 @@
 @import '../base/vars';
 
 .header {
-    padding: 6.6rem 0;
+  padding: 6.6rem 0;
+  position: relative;
 
-    &__inner {
-        @extend %flex-row-center;
+  @media(max-width: 1024px) {
+    padding: 4.5rem 0;
+  }
+
+  &__inner {
+    @extend %flex-row-center;
+  }
+
+  // .header__nav
+
+  &__nav {
+    @media (min-width: 1025px) {
+      margin-left: auto;
     }
 
-    // .header__nav
-
-    &__nav {
-        @media (min-width: 1025px) {
-            margin-left: auto;
-        }
-
-        @media (max-width: 1024px) {
-            display: none;
-        }
+    @media (max-width: 1024px) {
+      display: none;
     }
+  }
 
-    &__btn {
-        @extend %text-14;
-        border-radius: 0.8rem;
-        padding: 1rem 2.9rem;
+  &__sign-in {
+    @media(max-width: 1024px) {
+      margin-right: 3.1rem;
+      margin-left: auto;
     }
+  }
 
-    &__btn + &__btn {
-        margin-left: 1.3rem;
+  &__btn {
+    display: none;
+
+    @media(min-width: 1025px) {
+      display: block;
+      border-radius: 0.8rem;
+      padding: 1rem 2.9rem;
+      font-size: 1.4rem;
     }
+  }
+
+  &__btn+&__btn {
+    @media(min-width: 1025px) {
+      margin-left: 1.3rem;
+    }
+  }
 }

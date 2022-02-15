@@ -2,101 +2,141 @@
 @import '../base/mixins';
 
 .footer {
-    padding-bottom: 19.5rem;
-    &__cooperation {
-        &:not(:last-child) {
-            margin-bottom: 10.5rem;
-        }
+  padding-bottom: 19.5rem;
+
+  @media(max-width: 1024px) {
+    padding-bottom: 11rem;
+  }
+
+  &__cooperation {
+    &:not(:last-child) {
+      margin-bottom: 10.5rem;
+
+      @media(max-width: 1024px) {
+        margin-bottom: 7rem;
+      }
     }
+  }
 }
 
 .cooperation {
-    display: flex;
-    justify-content: center;
-    @extend %text-34;
-    color: #b4f299;
-    &__title {
-        font-weight: 400;
-        &:not(:last-child) {
-            margin-right: 3.3rem;
-        }
+  display: flex;
+  justify-content: center;
+  @extend %text-34;
+  color: #b4f299;
+
+  @media(max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  &__title {
+    font-weight: 400;
+
+    &:not(:last-child) {
+      @media(min-width: 1025px) {
+        margin-right: 3.3rem;
+      }
+
+      @media(max-width: 1024px) {
+        margin-bottom: 1.5rem;
+      }
     }
 
-    &__link {
-        text-decoration-line: underline;
-        @media (any-hover: hover) {
-            &:hover {
-                text-decoration: none;
-            }
-        }
+    @media(max-width: 767px) {
+      max-width: 15.4rem;
     }
+  }
+
+  &__link {
+    text-decoration-line: underline;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .social {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__link {
+    position: relative;
+    z-index: 1;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 2rem;
+    @extend %flex-col-center;
     justify-content: center;
 
-    &__link {
-        position: relative;
-        z-index: 1;
-        width: 12rem;
-        height: 12rem;
-        border-radius: 2rem;
-        @extend %flex-col-center;
-        justify-content: center;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.1rem;
+      right: 0.1rem;
+      bottom: 0.1rem;
+      left: 0.1rem;
+      z-index: -1;
+      background-color: $black;
+      border-radius: 2rem;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: linear-gradient(139.69deg, #05030e 3.61%, #7ee8a0 114.72%);
+
         &::before {
-            content: '';
-            position: absolute;
-            top: 0.1rem;
-            right: 0.1rem;
-            bottom: 0.1rem;
-            left: 0.1rem;
-            z-index: -1;
-            background-color: $black;
-            border-radius: 2rem;
-            opacity: 0;
-            transition: 0.3s opacity;
+          opacity: 1;
         }
-        @media (any-hover: hover) {
-            &:hover {
-                background: linear-gradient(139.69deg, #05030e 3.61%, #7ee8a0 114.72%);
-                &::before {
-                    opacity: 1;
-                }
-                .social {
-                    &__img {
-                        opacity: 1;
-                    }
 
-                    &__descr {
-                        background: none;
-                        -webkit-background-clip: unset;
-                        -webkit-text-fill-color: unset;
-                        color: #fff;
-                        opacity: 1;
-                    }
-                }
-            }
+        .social {
+          &__img {
+            opacity: 1;
+          }
+
+          &__descr {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: #fff;
+            opacity: 1;
+          }
         }
+      }
     }
+  }
 
-    &__img {
-        opacity: 0.3;
-        transition: 0.3s opacity;
-        &:not(:last-child) {
-            margin-bottom: 1.7rem;
-        }
-    }
+  &__img {
+    opacity: 0.3;
+    transition: 0.3s opacity;
 
-    &__descr {
-        @extend %text-14;
-        line-height: 2rem;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-        text-shadow: 0rem 2.4rem 6.4rem rgba(138, 249, 173, 0.3);
-        @include gradient-text(linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%));
-        opacity: 0.3;
-        transition: 0.3s all;
+    &:not(:last-child) {
+      margin-bottom: 1.7rem;
     }
+  }
+
+  &__descr {
+    @extend %text-14;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0rem 2.4rem 6.4rem rgba(138, 249, 173, 0.3);
+    @include gradient-text(linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%));
+    opacity: 0.3;
+    transition: 0.3s all;
+  }
 }
