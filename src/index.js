@@ -1,24 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useState, useEffect } from 'react';
 import './base/_general.scss';
 import AppHeader from './AppHeader/AppHeader';
 import Promo from './Promo/Promo';
+import AboutNimble from './AboutNimble/AboutNimble';
+import TokenUsage from './TokenUsage/TokenUsage';
+import TokenStaking from './TokenStaking/TokenStaking';
+import TokenFeatures from './TokenFeatures/TokenFeatures';
 import TokenSale from './TokenSale/TokenSale';
+import PartnerProgram from './PartnerProgram/PartnerProgram';
+import Kibotron from './Kibotron/Kibotron';
 import Footer from './Footer/Footer';
 
 function App() {
     //style={{ backgroundImage: 'url(img/promo.jpg)' }}
-  return (
-    <div className="wrapper">
-      <AppHeader />
-      <main className="page">
-        <Promo />
-        <TokenSale />
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="wrapper">
+            <AppHeader />
+            <main className="page">
+                <Promo />
+                <AboutNimble title="Nimble Token" />
+                <TokenUsage title="Применение токена" />
+                <TokenStaking title="Стейкинг Nimble Token" revenue="Доход на стейкинг" />
+                <TokenFeatures title="Характеристики Nimble Token" />
+                <TokenSale title="Token Sale" button="Принять участие" />
+                <PartnerProgram title="Парнерская программа" />
+                <Kibotron />
+            </main>
+            <Footer email="kibotronmedia@gmail.com" />
+        </div>
+    );
 }
 
 export default App;

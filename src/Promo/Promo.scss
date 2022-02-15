@@ -2,6 +2,7 @@
 
 .promo {
     padding-top: 11rem;
+    padding-bottom: 17.3rem;
 
     &__content {
         max-width: 54.9rem;
@@ -21,7 +22,7 @@
     &__text {
         @extend %text-18;
         font-weight: 500;
-        color: #8FA2A6;
+        color: #8fa2a6;
 
         &:not(:last-child) {
             margin-bottom: 3.6rem;
@@ -29,8 +30,6 @@
     }
 
     &__btn {
-        @extend %text-16;
-        line-height: 2rem;
         padding: 2.1rem 3.35rem;
     }
 }

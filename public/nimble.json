@@ -34,29 +34,29 @@
   ],
   "staking": [
     {
-      "without-accelerator": "6%",
-      "with-accelerator": "9%",
-      "revenue-interval": "1 - 5 000"
+      "без ускорителя": "6%",
+      "с ускорителем": "9%",
+      "interval": "1 - 5 000"
     },
     {
-      "without-accelerator": "8%",
-      "with-accelerator": "12%",
-      "revenue-interval": "5 001 - 30 000"
+      "без ускорителя": "8%",
+      "с ускорителем": "12%",
+      "interval": "5 001 - 30 000"
     },
     {
-      "without-accelerator": "10%",
-      "with-accelerator": "15%",
-      "revenue-interval": "30 001 - 100 000"
+      "без ускорителя": "10%",
+      "с ускорителем": "15%",
+      "interval": "30 001 - 100 000"
     },
     {
-      "without-accelerator": "12%",
-      "with-accelerator": "18%",
-      "revenue-interval": "100 001 - 300 000"
+      "без ускорителя": "12%",
+      "с ускорителем": "18%",
+      "interval": "100 001 - 300 000"
     },
     {
-      "without-accelerator": "22.5%",
-      "with-accelerator": "15%",
-      "revenue-interval": "300 001 - 1 000 000"
+      "без ускорителя": "22.5%",
+      "с ускорителем": "15%",
+      "interval": "300 001 - 1 000 000"
     }
   ],
   "features": {
@@ -94,35 +94,35 @@
   },
   "partnerProgram": [
     {
-      "from": "личная покупка от $30",
+      "from": "$30",
       "percent": "15%"
     },
     {
-      "from": "оборот от $100 ",
+      "from": "$100 ",
       "percent": "7%"
     },
     {
-      "from": "оборот от $500 ",
+      "from": "$500 ",
       "percent": "7%"
     },
     {
-      "from": "оборот от $1 000 ",
+      "from": "$1 000 ",
       "percent": "5%"
     },
     {
-      "from": "оборот от $3 000 ",
+      "from": "$3 000 ",
       "percent": "5%"
     },
     {
-      "from": "оборот от $5 000 ",
+      "from": "$5 000 ",
       "percent": "3%"
     },
     {
-      "from": "оборот от $10 000 ",
+      "from": "$10 000 ",
       "percent": "3%"
     }
   ],
-  "Kibotron": [
+  "kibotron": [
     {
       "title": "100 % честность и прозрачность ",
       "text": "проведения игр благодаря блокчейн и смарт-контрактам"
@@ -139,5 +139,6 @@
       "title": "абсолютная анонимность",
       "text": "при участии в играх и получении роялти, выигрышей и бонусов от структуры"
     }
-  ]
+  ],
+  "social": ["group", "channel", "youtube", "twitter", "medium"]
 }

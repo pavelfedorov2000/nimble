@@ -1,3 +1,15 @@
 @import '../base/vars';
 
-.logo {}
+.logo {
+    display: flex;
+    align-items: center;
+    &__img {
+        flex-shrink: 0;
+    }
+    &__descr {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 700;
+        margin-left: 2.4rem;
+    }
+}

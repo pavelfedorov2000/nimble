@@ -1,15 +1,14 @@
 @import '../base/vars';
 
 .nav-menu {
-
     &__list {
-        @media(min-width: 1025px) {
+        @media (min-width: 1025px) {
             display: flex;
         }
     }
 
     &__item {
-        @media(min-width: 1025px) {
+        @media (min-width: 1025px) {
             margin-right: 5rem;
         }
     }
@@ -18,5 +17,11 @@
         @extend %text-16;
         line-height: 2rem;
         font-weight: 600;
+        transition: 0.3s color;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accent;
+            }
+        }
     }
 }

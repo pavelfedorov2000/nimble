@@ -4,7 +4,11 @@ import './Logo.scss';
 function Logo() {
     return (
         <a href="#" className="logo">
-            <img src="img/logo.svg" alt="logo" className="logo__img" />
+            <img className="logo__img" src="img/logo.svg" alt="logo" />
+            <span className="logo__descr">
+                nimble<br />
+                token
+            </span>
         </a>
     );
 }

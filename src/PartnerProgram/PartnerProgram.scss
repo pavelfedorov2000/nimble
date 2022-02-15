@@ -1,0 +1,106 @@
+@import '../base/vars';
+@import '../base/mixins';
+
+.partner-program {
+    padding-bottom: 12.5rem;
+    &__inner {
+        @extend %flex-row;
+    }
+
+    &__content {
+        @extend %flex-col;
+        align-items: flex-end;
+    }
+
+    &__content-main {
+        &:not(:last-child) {
+            margin-bottom: 13.7rem;
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 5.2rem;
+        }
+    }
+
+    &__levels {
+        width: 48.6rem;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__info-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        flex-shrink: 0;
+        margin-right: 4.3rem;
+    }
+
+    &__info-text {
+        @extend %text-16;
+        line-height: 2.4rem;
+        font-weight: 500;
+        color: #8fa2a6;
+        max-width: 72.2rem;
+    }
+}
+
+.levels {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 1.5rem;
+    &__item {
+        display: grid;
+        grid-template-columns: minmax(7.5rem, max-content) 2.6rem 3.6rem 2.3rem 1fr 2.9rem minmax(5rem, max-content);
+        grid-template-areas:
+            'num . divider . descr . .'
+            'bar bar bar bar bar . percent';
+        align-items: center;
+    }
+}
+
+.level {
+    &__num {
+        grid-area: num;
+        @extend %text-14;
+        line-height: 3.2rem;
+        font-weight: 500;
+    }
+    &__divider {
+        grid-area: divider;
+        height: 0.1rem;
+        box-shadow: 0rem 1.4rem 4.4rem rgba(220, 152, 57, 0.6);
+        border-radius: 2.5rem;
+    }
+    &__descr {
+        grid-area: descr;
+        @extend %text-16;
+        line-height: 2rem;
+        font-weight: 500;
+    }
+    &__bar {
+        position: relative;
+        grid-area: bar;
+        height: 0.8rem;
+        background-color: #c4c4c4;
+        border-radius: 2.5rem;
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            height: 100%;
+            box-shadow: 0rem 1.4rem 4.4rem rgba(220, 152, 57, 0.6);
+            border-radius: 2.5rem;
+        }
+    }
+    &__percent {
+        grid-area: percent;
+        @extend %text-26;
+        font-weight: 800;
+    }
+}

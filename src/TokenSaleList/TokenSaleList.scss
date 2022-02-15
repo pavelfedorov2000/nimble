@@ -1,23 +1,9 @@
 @import '../base/vars';
 
 .token-sale-card {
-    position: relative;
-    z-index: 1;
+    @extend %box;
     text-align: center;
-    border-radius: 2rem;
-    background: linear-gradient(139.69deg, #05030e 3.61%, #7ee8a0 114.72%);
     transition: 0.3s all;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0.1rem;
-        right: 0.1rem;
-        bottom: 0.1rem;
-        left: 0.1rem;
-        z-index: -1;
-        background-color: $black;
-        border-radius: 2rem;
-    }
     @media (any-hover: hover) {
         &:hover {
             box-shadow: 0rem 3.4rem 7.4rem rgba(162, 220, 137, 0.2);

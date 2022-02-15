@@ -1,0 +1,102 @@
+@import '../base/vars';
+@import '../base/mixins';
+
+.footer {
+    padding-bottom: 19.5rem;
+    &__cooperation {
+        &:not(:last-child) {
+            margin-bottom: 10.5rem;
+        }
+    }
+}
+
+.cooperation {
+    display: flex;
+    justify-content: center;
+    @extend %text-34;
+    color: #b4f299;
+    &__title {
+        font-weight: 400;
+        &:not(:last-child) {
+            margin-right: 3.3rem;
+        }
+    }
+
+    &__link {
+        text-decoration-line: underline;
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+
+    &__link {
+        position: relative;
+        z-index: 1;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 2rem;
+        @extend %flex-col-center;
+        justify-content: center;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+            bottom: 0.1rem;
+            left: 0.1rem;
+            z-index: -1;
+            background-color: $black;
+            border-radius: 2rem;
+            opacity: 0;
+            transition: 0.3s opacity;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background: linear-gradient(139.69deg, #05030e 3.61%, #7ee8a0 114.72%);
+                &::before {
+                    opacity: 1;
+                }
+                .social {
+                    &__img {
+                        opacity: 1;
+                    }
+
+                    &__descr {
+                        background: none;
+                        -webkit-background-clip: unset;
+                        -webkit-text-fill-color: unset;
+                        color: #fff;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__img {
+        opacity: 0.3;
+        transition: 0.3s opacity;
+        &:not(:last-child) {
+            margin-bottom: 1.7rem;
+        }
+    }
+
+    &__descr {
+        @extend %text-14;
+        line-height: 2rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0rem 2.4rem 6.4rem rgba(138, 249, 173, 0.3);
+        @include gradient-text(linear-gradient(105.56deg, #e2f685 18.43%, #8af9ad 89.58%));
+        opacity: 0.3;
+        transition: 0.3s all;
+    }
+}
