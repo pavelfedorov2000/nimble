@@ -14,24 +14,24 @@ import Kibotron from './Kibotron/Kibotron';
 import Footer from './Footer/Footer';
 
 function App() {
-  //style={{ backgroundImage: 'url(img/promo.jpg)' }}
-  return (
-    <div className="wrapper">
-      <AppHeader />
-      <main className="page">
-        <Promo />
-        <TokenBenefits />
-        <AboutNimble title="Nimble Token" />
-        <TokenUsage title="Применение токена" />
-        <TokenStaking title="Стейкинг Nimble Token" revenue="Доход на стейкинг" />
-        <TokenFeatures title="Характеристики Nimble Token" />
-        <TokenSale title="Token Sale" button="Принять участие" />
-        <PartnerProgram title="Парнерская программа" />
-        <Kibotron />
-      </main>
-      <Footer email="kibotronmedia@gmail.com" />
-    </div>
-  );
+    //style={{ backgroundImage: 'url(img/promo.jpg)' }}
+    return (
+        <div className="wrapper">
+            <AppHeader />
+            <main className="page">
+                <Promo title="Присоединяйся к революции в мире гемблинга" text="100% честность игры и распределения средств" btn="Открыть аккаунт" />
+                <TokenBenefits />
+                <AboutNimble title="Nimble Token" />
+                <TokenUsage title="Применение токена" />
+                <TokenStaking title="Стейкинг Nimble Token" revenue="Доход на стейкинг" />
+                <TokenFeatures title="Характеристики Nimble Token" />
+                <TokenSale title="Token Sale" button="Принять участие" />
+                <PartnerProgram title="Парнерская программа" />
+                <Kibotron />
+            </main>
+            <Footer email="kibotronmedia@gmail.com" />
+        </div>
+    );
 }
 
 export default App;

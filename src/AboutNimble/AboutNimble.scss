@@ -1,59 +1,70 @@
 @import '../base/vars';
 
 .about-nimble {
-  padding-bottom: 15rem;
+    padding-bottom: 15rem;
 
-  @media(max-width: 1024px) {
-    padding-bottom: 13.3rem;
-  }
-
-  &__img {
-    width: 30.6rem;
-    height: 21.9rem;
-
-    @media(max-width: 1024px) {
-      margin: 0 auto;
+    @media (max-width: 1024px) {
+        padding-bottom: 13.3rem;
     }
-  }
 
-  &__inner {
-    @media(min-width: 1025px) {
-      flex-direction: row-reverse;
-      align-items: flex-start;
-    }
-  }
+    &__img {
+        width: 30.6rem;
+        height: 21.9rem;
 
-  &__content {
-    &:not(:last-child) {
-      @media(max-width: 1024px) {
-        margin-bottom: 7.5rem;
-      }
-    }
-  }
-
-  &__title {
-    &:not(:last-child) {
-      margin-bottom: 5.4rem;
-    }
-  }
-
-  &__text {
-    @extend %text-16;
-    line-height: 2.4rem;
-    font-weight: 500;
-    color: #8fa2a6;
-    max-width: 78.7rem;
-
-    p {
-      &:not(:last-child) {
-        margin-bottom: 3rem;
-      }
-
-      &.hidden {
-        @media(max-width: 1024px) {
-          display: none;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-      }
+
+        @media (max-width: 1024px) {
+            margin: 0 auto;
+        }
     }
-  }
+
+    &__inner {
+        @media (min-width: 1025px) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__content {
+        max-width: 78.7rem;
+        &:not(:last-child) {
+            @media (max-width: 1024px) {
+                margin-bottom: 7.5rem;
+            }
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 5.4rem;
+        }
+    }
+
+    &__text {
+        @extend %text-16;
+        line-height: 2.4rem;
+        font-weight: 500;
+        color: #8fa2a6;
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+                @media (max-width: 767px) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            &.hidden {
+                @media (max-width: 1024px) {
+                    display: none;
+                }
+            }
+        }
+    }
 }

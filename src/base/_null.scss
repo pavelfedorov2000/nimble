@@ -18,6 +18,10 @@ html {
     @media (max-width: 767px) {
         font-size: calc(100vw / 480 * 10);
     }
+
+    @media (max-width: 479px) {
+        font-size: calc(100vw / 320 * 10);
+    }
 }
 
 body {
