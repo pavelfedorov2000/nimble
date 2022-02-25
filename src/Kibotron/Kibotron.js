@@ -23,15 +23,6 @@ function Kibotron() {
             );
     }, []);
 
-    const params = {
-        spaceBetween: 33,
-        slidesPerView: 'auto',
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        }
-    };
-
     return (
         <section id="section-5" className="kibotron">
             <div className="container">
@@ -52,7 +43,12 @@ function Kibotron() {
                                 </div>
                             ))}
                         </div>
-                        <Swiper {...params} className="kibotron__slider">
+                        <Swiper className="kibotron__slider"
+                            modules={[Navigation]}
+                            spaceBetween={33}
+                            slidesPerView={'auto'}
+                            navigation
+                        >
                             {kibotrons.map(kibotron => (
                                 <SwiperSlide className="kibotron__item">
                                     <div className="kibotron__item-title">{kibotron.title}</div>

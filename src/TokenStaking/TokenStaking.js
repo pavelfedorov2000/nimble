@@ -32,15 +32,6 @@ function TokenStaking(props) {
             );
     }, []);
 
-    const params = {
-        spaceBetween: 15,
-        slidesPerView: 'auto',
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        }
-    };
-
     return (
         <section className="token-staking">
             <div className="container token-staking__container">
@@ -63,15 +54,21 @@ function TokenStaking(props) {
                             </div>
                         ))}
                     </div>
-                    <Swiper className="token-staking__slider">
+                    <Swiper className="token-staking__slider"
+                        modules={[Navigation]}
+                        spaceBetween={15}
+                        slidesPerView={'auto'}
+                        navigation
+                    >
                         {stakings.map((item, i) => (
-                            <SwiperSlide {...params} className="staking-chart">
+                            <SwiperSlide className="staking-chart">
                                 <div className="staking-chart__bar">
                                     <img src={`img/bars/bar-${i + 1}.svg`} alt="" />
                                 </div>
                                 <div className="staking-chart__interval">{item.interval}</div>
                             </SwiperSlide>
                         ))}
+
                     </Swiper>
                 </div>
                 <div className="token-staking__text">

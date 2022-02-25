@@ -25,7 +25,7 @@ function Footer(props) {
                     {socials.map((social, i) => (
                         <li className="social__item">
                             <a className="social__link" href="#">
-                                <img className="social__img" src={(i == 0 || i == 1) ? "img/icons/telegram.svg" : `img/icons/${social}.svg`} alt={(i == 0 || i == 1) ? "telegram" : social} />
+                                <img className={(i == 0 || i == 1) ? "social__img social__img--telegram" : `social__img social__img--${social}`} src={(i == 0 || i == 1) ? "img/icons/telegram.svg" : `img/icons/${social}.svg`} alt={(i == 0 || i == 1) ? "telegram" : social} />
                                 <span className="social__descr">{social}</span>
                             </a>
                         </li>

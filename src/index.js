@@ -16,7 +16,7 @@ import Footer from './Footer/Footer';
 function App() {
     //style={{ backgroundImage: 'url(img/promo.jpg)' }}
     return (
-        <div className="wrapper">
+        <div className="wrapper" style={{ backgroundImage: 'url(img/promo.jpg)' }}>
             <AppHeader />
             <main className="page">
                 <Promo title="Присоединяйся к революции в мире гемблинга" text="100% честность игры и распределения средств" btn="Открыть аккаунт" />

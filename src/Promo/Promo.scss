@@ -1,44 +1,50 @@
 @import '../base/vars';
 
 .promo {
-  padding-top: 11rem;
-  padding-bottom: 17.3rem;
-
-  &__content {
-    max-width: 54.9rem;
-  }
-
-  &__title {
-    font-size: 4.8rem;
-    line-height: 5.9rem;
-    font-weight: 800;
-    color: $accent;
-
-    @media(max-width: 767px) {
-      font-size: 3.1rem;
-      line-height: 3.8rem;
+    padding-top: 11rem;
+    padding-bottom: 17.3rem;
+    @media (max-width: 767px) {
+        padding-top: 26.8rem - 4.5rem;
+        padding-bottom: 6rem;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 2.5rem;
+    &__content {
+        @media (min-width: 768px) {
+            max-width: 54.9rem;
+        }
     }
-  }
 
-  &__text {
-    @extend %text-18;
-    font-weight: 500;
-    color: #8fa2a6;
+    &__title {
+        font-size: 4.8rem;
+        line-height: 5.9rem;
+        font-weight: 800;
+        color: $accent;
 
-    &:not(:last-child) {
-      margin-bottom: 3.6rem;
+        @media (max-width: 767px) {
+            font-size: 3.1rem;
+            line-height: 3.8rem;
+        }
 
-      @media(max-width: 767px) {
-        margin-bottom: 2.8rem;
-      }
+        &:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
     }
-  }
 
-  &__btn {
-    padding: 2.1rem 3.35rem;
-  }
+    &__text {
+        @extend %text-18;
+        font-weight: 500;
+        color: #8fa2a6;
+
+        &:not(:last-child) {
+            margin-bottom: 3.6rem;
+
+            @media (max-width: 767px) {
+                margin-bottom: 2.8rem;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 2.1rem 3.35rem;
+    }
 }

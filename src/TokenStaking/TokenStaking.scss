@@ -98,9 +98,14 @@
 
     &__slider {
         display: none;
+        padding-bottom: 5rem !important;
 
         @media (max-width: 767px) {
             display: block;
+        }
+
+        .swiper-wrapper {
+            align-items: flex-end;
         }
 
         .swiper-slide {

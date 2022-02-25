@@ -6,13 +6,21 @@
     @extend %flex-col;
     min-height: 100vh;
     position: relative;
-    //background-size: 111rem 99.9rem;
-    //background-position: 50rem 2.1rem;
-    //background-repeat: no-repeat;
+    background-size: 111rem 99.9rem;
+    background-position: 100% 2.1rem;
+    background-repeat: no-repeat;
     overflow-x: hidden;
+    @media (max-width: 1024px) {
+        background-size: 60rem 50rem;
+        background-position-y: 0;
+    }
+    @media (max-width: 767px) {
+        background-size: 47.1rem 42.4rem;
+        background-position: 0 0;
+    }
 
     &::before {
-        //content: '';
+        content: '';
         position: absolute;
         top: -28.5rem;
         left: -22.9rem;
@@ -130,36 +138,58 @@
     }
 }
 
-.swiper-button-prev {
-    display: none;
-}
+/* .swiper-button-prev {
+    display: none !important;
+} */
 
+.swiper-button-prev,
 .swiper-button-next {
-    width: 3.4rem !important;
-    height: 1rem !important;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    top: calc(100% + 3rem) !important;
-    left: 12.2rem !important;
-    right: auto !important;
+    width: 2.7rem !important;
+    height: 0.2rem !important;
+    background-color: $accent;
+    top: auto !important;
+    bottom: 0.4rem;
+    margin-top: 0 !important;
 
     &:after {
         content: '' !important;
+        position: absolute;
+        @extend %pos-center-y;
+        z-index: 30;
+        width: 0.7rem;
+        height: 1rem;
+        background-color: $accent;
+    }
+}
+
+.swiper-button-next {
+    left: 7.5rem !important;
+    right: auto !important;
+    &:after {
+        right: -0.2rem;
+        clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    }
+}
+
+.swiper-button-prev {
+    left: 0;
+    &:after {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+        left: 0;
     }
 }
 
 .swiper {
-    padding-bottom: 3rem;
-    //height: 30rem !important;
+    padding-bottom: 2rem !important;
 }
 
 .swiper-slide {
+    box-sizing: border-box;
     transition: 0.3s all;
 }
 
 .swiper-slide-active {
-    //transform: translateY(-4rem) !important;
+    transform: translateY(-4rem) !important;
 }
 
 .sign-in-btn {

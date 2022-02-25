@@ -16,60 +16,55 @@ import "swiper/modules/navigation/navigation";
 //import 'swiper/css/navigation';
 
 function TokenBenefits() {
-  const [benefits, setBenefits] = useState([]);
+    const [benefits, setBenefits] = useState([]);
 
-  useEffect(() => {
-    fetch("nimble.json")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setBenefits(result.benefits);
-        }
-      );
-  }, []);
+    useEffect(() => {
+        fetch("nimble.json")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setBenefits(result.benefits);
+                }
+            );
+    }, []);
 
-  const params = {
-    spaceBetween: 36,
-    slidesPerView: 'auto',
-    navigation: {
-      nextEl: ".next",
-      //prevEl: ".swiper-button-prev"
-    }
-  };
-
-  return (
-    <div className="token-benefits">
-      <div className="container">
-        <div className="token-benefits__items">
-          {benefits.map(benefit => (
-            <div className="token-benefit token-benefits__item">
-              <div className="token-benefit__top">
-                <div className="token-benefit__img">
-                  <img src={`img/icons/${benefit.item}.svg`} alt="img" />
+    return (
+        <div className="token-benefits">
+            <div className="container">
+                <div className="token-benefits__items">
+                    {benefits.map(benefit => (
+                        <div className="token-benefit token-benefits__item">
+                            <div className="token-benefit__top">
+                                <div className="token-benefit__img">
+                                    <img src={`img/icons/${benefit.item}.svg`} alt="img" />
+                                </div>
+                                <div className="token-benefit__title">{benefit.item}</div>
+                            </div>
+                            <div className="token-benefit__descr">{benefit.text}</div>
+                        </div>
+                    ))}
                 </div>
-                <div className="token-benefit__title">{benefit.item}</div>
-              </div>
-              <div className="token-benefit__descr">{benefit.text}</div>
+                <Swiper className="token-benefits__slider"
+                    modules={[Navigation]}
+                    spaceBetween={36}
+                    slidesPerView={'auto'}
+                    navigation
+                >
+                    {benefits.map(benefit => (
+                        <SwiperSlide className="token-benefit token-benefits__item">
+                            <div className="token-benefit__top">
+                                <div className="token-benefit__img">
+                                    <img src={`img/icons/${benefit.item}.svg`} alt="img" />
+                                </div>
+                                <div className="token-benefit__title">{benefit.item}</div>
+                            </div>
+                            <div className="token-benefit__descr">{benefit.text}</div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
-          ))}
         </div>
-        <Swiper {...params} className="token-benefits__slider">
-          {benefits.map(benefit => (
-            <SwiperSlide className="token-benefit token-benefits__item">
-              <div className="token-benefit__top">
-                <div className="token-benefit__img">
-                  <img src={`img/icons/${benefit.item}.svg`} alt="img" />
-                </div>
-                <div className="token-benefit__title">{benefit.item}</div>
-              </div>
-              <div className="token-benefit__descr">{benefit.text}</div>
-            </SwiperSlide>
-          ))}
-          <div className="swiper-button-next next" style={{ backgroundImage: `url("img/icons/arrow.svg")` }}></div>
-        </Swiper>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default TokenBenefits;
