@@ -14,7 +14,6 @@ import Kibotron from './Kibotron/Kibotron';
 import Footer from './Footer/Footer';
 
 function App() {
-    //style={{ backgroundImage: 'url(img/promo.jpg)' }}
     return (
         <div className="wrapper" style={{ backgroundImage: 'url(img/promo.jpg)' }}>
             <AppHeader />

@@ -75,7 +75,7 @@
 
     &__slider {
         display: none;
-
+        padding-top: 4rem;
         @media (max-width: 767px) {
             display: block;
         }

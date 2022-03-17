@@ -71,7 +71,7 @@ function PartnerProgram(props) {
                             <div className="title partner-program__title">{props.title}</div>
                             <ol className="partner-program__levels levels">
                                 {levels.map((level, i) => (
-                                    <li className="levels__item level">
+                                    <li className="levels__item level" key={`level-${i}`}>
                                         <div className="level__num">Уровень {i + 1}</div>
                                         <span className="level__divider" style={{ background: genegateBarColor(level.percent) }}></span>
                                         <div className="level__descr mob-hidden" style={{ color: genegateColor(level.percent) }}>

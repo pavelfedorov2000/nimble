@@ -29,7 +29,7 @@ function TokenSaleSlider(props) {
             navigation
         >
             {tokens.map((token, index) => (
-                <SwiperSlide className="token-sale__list-item token-sale-card">
+                <SwiperSlide className="token-sale__list-item token-sale-card" key={`token-${index}`}>
                     <div className="token-sale-card__title">Раунд {index + 1}</div>
                     <div className="token-sale-card__content">
                         <div className="token-sale-card__price">{token}</div>

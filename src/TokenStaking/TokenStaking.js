@@ -46,7 +46,7 @@ function TokenStaking(props) {
                     </ul>
                     <div className="token-staking__chart-row">
                         {stakings.map((item, i) => (
-                            <div className="staking-chart">
+                            <div className="staking-chart" key={`chart-${i}`}>
                                 <div className="staking-chart__bar">
                                     <img src={`img/bars/bar-${i + 1}.svg`} alt="" />
                                 </div>
@@ -61,7 +61,7 @@ function TokenStaking(props) {
                         navigation
                     >
                         {stakings.map((item, i) => (
-                            <SwiperSlide className="staking-chart">
+                            <SwiperSlide className="staking-chart" key={`chart-${i}`}>
                                 <div className="staking-chart__bar">
                                     <img src={`img/bars/bar-${i + 1}.svg`} alt="" />
                                 </div>

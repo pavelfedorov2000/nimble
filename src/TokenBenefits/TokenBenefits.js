@@ -8,12 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-//import 'swiper/modules/effect-fade/effect-fade';
 import "swiper/modules/navigation/navigation";
-//import "swiper/modules/pagination/pagination";
-//import 'swiper/swiper.min.css';
-//import 'swiper/css';
-//import 'swiper/css/navigation';
 
 function TokenBenefits() {
     const [benefits, setBenefits] = useState([]);
@@ -32,8 +27,8 @@ function TokenBenefits() {
         <div className="token-benefits">
             <div className="container">
                 <div className="token-benefits__items">
-                    {benefits.map(benefit => (
-                        <div className="token-benefit token-benefits__item">
+                    {benefits.map((benefit, index) => (
+                        <div className="token-benefit token-benefits__item" key={`benefit-${index}`}>
                             <div className="token-benefit__top">
                                 <div className="token-benefit__img">
                                     <img src={`img/icons/${benefit.item}.svg`} alt="img" />
@@ -50,8 +45,8 @@ function TokenBenefits() {
                     slidesPerView={'auto'}
                     navigation
                 >
-                    {benefits.map(benefit => (
-                        <SwiperSlide className="token-benefit token-benefits__item">
+                    {benefits.map((benefit, index) => (
+                        <SwiperSlide className="token-benefit token-benefits__item" key={`benefit-${index}`}>
                             <div className="token-benefit__top">
                                 <div className="token-benefit__img">
                                     <img src={`img/icons/${benefit.item}.svg`} alt="img" />

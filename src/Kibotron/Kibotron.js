@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-//import ReactDOM from 'react-dom';
 import './Kibotron.scss';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
@@ -36,8 +35,8 @@ function Kibotron() {
                             Kibotron
                         </div>
                         <div className="kibotron__items">
-                            {kibotrons.map(kibotron => (
-                                <div className="kibotron__item">
+                            {kibotrons.map((kibotron, index) => (
+                                <div className="kibotron__item" key={`kibotron-${index}`}>
                                     <div className="kibotron__item-title">{kibotron.title}</div>
                                     <div className="kibotron__item-text">{kibotron.text}</div>
                                 </div>
@@ -49,8 +48,8 @@ function Kibotron() {
                             slidesPerView={'auto'}
                             navigation
                         >
-                            {kibotrons.map(kibotron => (
-                                <SwiperSlide className="kibotron__item">
+                            {kibotrons.map((kibotron, index) => (
+                                <SwiperSlide className="kibotron__item" key={`kibotron-${index}`}>
                                     <div className="kibotron__item-title">{kibotron.title}</div>
                                     <div className="kibotron__item-text">{kibotron.text}</div>
                                 </SwiperSlide>

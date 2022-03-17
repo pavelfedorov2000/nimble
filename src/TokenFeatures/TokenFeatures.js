@@ -38,8 +38,8 @@ function TokenFeatures(props) {
                     <div className="token-features__content">
                         <h2 className="title token-features__title mob-hidden">{props.title}</h2>
                         <dl className="token-features__list">
-                            {features.map(feature => (
-                                <div className="token-features__list-item">
+                            {features.map((feature, index) => (
+                                <div className="token-features__list-item" key={`feature-${index}`}>
                                     <dt>{feature[0]}:</dt>
                                     <dd>{feature[1]}</dd>
                                 </div>

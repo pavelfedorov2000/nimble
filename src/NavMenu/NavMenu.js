@@ -20,7 +20,7 @@ function NavMenu() {
             <ul className="nav-menu__list">
                 {
                     links.map((link, index) =>
-                        <li className="nav-menu__item">
+                        <li className="nav-menu__item" key={`nav-link-${index}`}>
                             <Link className="nav-menu__link"
                                 to={`section-${index + 1}`}
                                 spy={true}

@@ -21,8 +21,8 @@ function TokenUsage(props) {
                     <div className="token-usage__content">
                         <h2 className="title token-usage__title title--orange">{props.title}</h2>
                         <ul className="token-usage__list">
-                            {usage.map(item => (
-                                <li className="token-usage__list-item">{item}</li>
+                            {usage.map((item, index) => (
+                                <li className="token-usage__list-item" key={`usage-${index}`}>{item}</li>
                             ))}
                         </ul>
                     </div>
